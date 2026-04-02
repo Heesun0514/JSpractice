@@ -138,10 +138,36 @@ alert(result3) //22(result3)
 
         </script>
     </head>
-
-
-
-
-
-
 </html>
+
+
+/*
+Exercise 6, Arrays: f6 should take array parameters and return an integer.
+
+Create a function f6 to return the sum of all the multiples of factors in a found in l 
+(a and l should be arrays of integers)
+
+*/
+
+
+
+function f6(a,l){
+ 
+    let sum=0;
+
+    for (let i=0; i<l.length;i++)
+    {
+if (l[i]%a[j]===0)
+{
+    sum +=l[i];
+    break
+}
+    }
+}
+
+return sum;
+
+let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);\
+alert(result3);
+
+   
