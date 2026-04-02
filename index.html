@@ -35,10 +35,6 @@ console.log(result2);
 alert(result2) //22
 
 
-//(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input
-//Call the function f4 in the function called by onClick, and alert the user to the returned answer when they press the button.
-
-
 
 
 
@@ -46,86 +42,15 @@ alert(result2) //22
 //Exercise 5, Arrays: f5 should take array parameters and return an integer.
 // Create a function f5 to return the sum of all the multiples of factors in a found in l
 // (a and l should be arrays of integers, a is of length 2)
-// l 배열에서 a 배열에 있는 인수(factors)들의 배수들을 모두 더한 값을 반환하는 함수 f5를 만드세요
-//a와 l은 정수 배열입니다
-//a 배열의 길이는 2입니다
 
-//쉽게 설명하면
-
-// a = [2, 3] (2와 3이라는 두 개의 숫자가 들어있는 배열)
-// l = [1, 2, 3, 4, 5, 6] (여러 숫자들이 들어있는 배열)
-
-
-//해야 할 일:
-//1. l 배열에 있는 숫자들을 하나씩 검사
-//2. 그 숫자가 a[0]의 배수 또는 a[1]의 배수인지 확인
-//3. 조건에 맞는 숫자들을 모두 더하기
-//4. 더한 값을 반환
-
-/*
-
-단계별 실행 과정
-
-초기값: sum = 0
-
-i	l[i]	2의 배수?	3의 배수?	조건 만족?	sum 변화
-0	1	1%2=1 (아니오)	1%3=1 (아니오)	❌	sum = 0
-1	2	2%2=0 (예)	2%3=2 (아니오)	✅	sum = 0+2 = 2
-2	3	3%2=1 (아니오)	3%3=0 (예)	✅	sum = 2+3 = 5
-3	4	4%2=0 (예)	4%3=1 (아니오)	✅	sum = 5+4 = 9
-4	5	5%2=1 (아니오)	5%3=2 (아니오)	❌	sum = 9
-5	6	6%2=0 (예)	6%3=0 (예)	✅	
-
-*/
 
 function f5(a,l){
-    //a=[2,3](2개의 인수)
-    //l=[1,2,3,4,5,6] (검사할 배열)
+    let sum=0;
 
-    let sum=0;// 합계를 저장할 변수
-
-    for (let i=0; i<l.length;i++)
-{
-    // l[i]가 a[0]의 배수이거나 a[1]의 배수이면
+    for (let i=0; i<l.length;i++){
     if(l[i]%a[0]===0|| l[i]% a[1]===0){
- 
-/*
-1. l 배열의 i번째 요소
-예: l = [1, 2, 3, 4, 5, 6]일 때
-
-l[0] = 1
-l[1] = 2
-l[2] = 3
-l[3] = 4
-l[4] = 5
-l[5] = 6
-
-2. a[0]와 a[1]
-
-a 배열의 첫 번째 요소와 두 번째 요소
-예: a = [2, 3]일 때
-
-a[0] = 2
-a[1] = 3
-
-*/
-
         sum=sum+l[i];
     }
-
-    /*
-    반복문 실행 과정
-
-단계	l[i]	조건 만족?	실행 전 sum	sum = sum + l[i]	실행 후 sum
-i=0	1	❌	0	실행 안 함	0
-i=1	2	✅	0	0 + 2	2
-i=2	3	✅	2	2 + 3	5
-i=3	4	✅	5	5 + 4	9
-i=4	5	❌	9	실행 안 함	9
-i=5	6	✅	9	9 + 6
-    
-    
-    */
 }
 return sum;
 }
@@ -141,9 +66,6 @@ alert(result3) //22(result3)
 
 //Create a function f6 to return the sum of all the multiples of factors in a found in l 
 //(a and l should be arrays of integers)
-
-
-
 
 function f6(a, l) {
     let sum = 0;
@@ -163,13 +85,41 @@ function f6(a, l) {
 
 let result4 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 alert(result4);  // This will alert: 47
-
-
-
-
         </script>
     </head>
+
+/(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input
+//Call the function f4 in the function called by onClick, and alert the user to the returned answer when they press the button.
+
+<body>
+
+function handleCalculate() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let text = document.getElementById('l').value;
+          
+
+            let arr = text.split(',').map(Number);
+            
+            let answer = f4(a, b, arr);
+            alert(answer);
+        }
+    </script>
+</head>
+
+
+<body>
+   <p>a: <input id="a"></p> 
+   <p>b: <input id="b"></p> 
+   <p>l: <input id="l"></p>
+    <button onclick="handleCalculate()">Click</button>
+</body>
+
+
+
 </html>
+
+
 
 
 
