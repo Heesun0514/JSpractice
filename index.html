@@ -9,7 +9,7 @@
 
  // Exercise 3,Create a function to return the sum of all the multiples of a or b below n
 
-function sumOfalltheMultiples(a,b,n)
+function f3(a,b,n)
 
 {
 
@@ -24,8 +24,24 @@ let sum=0;
     return sum;
 }
 
-let result=sumOfalltheMultiples(3,5,10);
+let result=f3(3,5,10);
 alert(result)
+
+
+
+
+function handleCalculateF3() {
+            let a = Number(document.getElementById('a_f3').value);
+       
+            let b = Number(document.getElementById('b_f3').value);
+
+            let n = Number(document.getElementById('n_f3').value);
+            
+    
+            let answer = f3(a, b, n);
+            alert(answer);
+        }
+
 
 
 /*
@@ -180,6 +196,14 @@ alert(result3);  // This will alert: 47
 
 
 <body>
+
+
+  <h2>Exercise 3.1</h2>
+   <p>a: <input id="a_f3" placeholder="e.g.,2"></p> 
+   <p>b: <input id="b_f3" placeholder="e.g.,3"></p> 
+   <p>l: <input id="n_f3" placeholder="e.g., 1,2,3,4,5"></p>
+    <button onclick="handleCalculateF3()">Click</button>
+
   <h2>Exercise 4.1</h2>
    <p>a: <input id="a_f4" placeholder="e.g.,2"></p> 
    <p>b: <input id="b_f4" placeholder="e.g.,3"></p> 
