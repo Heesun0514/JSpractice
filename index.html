@@ -21,7 +21,7 @@ alert(result); //22
 
 // Exercise 4: Function f4 that takes 2 integers and an array
 // Returns sum of all multiples of a or b in the array
-            function f4(a, b, arr) {
+    function f4(a, b, arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] % a === 0 || arr[i] % b === 0) {
@@ -35,7 +35,20 @@ console.log(result2);
 alert(result2) //22
 
 
+//(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input
+//Call the function f4 in the function called by onClick, and alert the user to the returned answer when they press the button.
 
+function handleCalculate() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let text = document.getElementById('l').value;
+          
+
+            let arr = text.split(',').map(Number);
+            
+            let answer = f4(a, b, arr);
+            alert(answer);
+        }
 
 
 
@@ -86,28 +99,15 @@ function f6(a, l) {
 let result4 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 alert(result4);  // This will alert: 47
   
-//(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input
-//Call the function f4 in the function called by onClick, and alert the user to the returned answer when they press the button.
 
-function handleCalculate() {
-            let a = Number(document.getElementById('a').value);
-            let b = Number(document.getElementById('b').value);
-            let text = document.getElementById('l').value;
-          
-
-            let arr = text.split(',').map(Number);
-            
-            let answer = f4(a, b, arr);
-            alert(answer);
-        }
     </script>
 </head>
 
 
 <body>
-   <p>a: <input id="a"></p> 
-   <p>b: <input id="b"></p> 
-   <p>l: <input id="l"></p>
+   <p>a: <input id="a" placeholder="e.g.,2"></p> 
+   <p>b: <input id="b" placeholder="e.g.,3"></p> 
+   <p>l: <input id="l" placeholder="e.g., 1,2,3,4,5">></p>
     <button onclick="handleCalculate()">Click</button>
 </body>
 
