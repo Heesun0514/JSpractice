@@ -190,6 +190,29 @@ alert(result3);  // This will alert: 47
 
 
 
+/*
+
+(Exercise 6.1) Create a page with a button and two wide input boxes, labelled a and l
+
+Call the function f6 in the function called by onClick, and alert the user to the returned answer when they press the button.
+
+You may find the split function useful for creating arrays from the strings entered: Split
+
+*/
+
+function handleCalculateF6() {
+            let textA = document.getElementById('a_f6').value;
+            let arrA= textA.split(',').map(Number);
+          
+            let textL = document.getElementById('l_f6').value;
+            let arrL= textL.split(',').map(Number);
+        
+
+
+            let answer3 = f6(arrA,arrL);
+            alert(answer3);
+        }
+
     </script>
 </head>
 
@@ -214,6 +237,11 @@ alert(result3);  // This will alert: 47
 <p>a:<input id="a_f5" placeholder="e.g., 1,2"></p>
 <p>l:<input id="l_f5" placeholder="e.g., 1,2,3,4,5"></p>
  <button onclick="handleCalculateF5()">Click</button>
+
+<h2>Exercise 6.1</h2>
+    <p>a:<input id="a_f6" placeholder="e.g., 1,2,3,4,5"></p>
+    <p>l:<input id="l_f6" placeholder="e.g., 1,2,3,4,5"></p>
+    <button onclick="handleCalculateF6()">Click</button>
 
 
 
