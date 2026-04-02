@@ -151,23 +151,21 @@ Create a function f6 to return the sum of all the multiples of factors in a foun
 
 
 
-function f6(a,l){
- 
-    let sum=0;
-
-    for (let i=0; i<l.length;i++)
-    {
-if (l[i]%a[j]===0)
-{
-    sum +=l[i];
-    break
-}
+function f6(a, l) {
+    let sum = 0;
+    
+    for (let i = 0; i < l.length; i++) {
+       
+        for (let j = 0; j < a.length; j++) {
+            if (l[i] % a[j] === 0) {
+                sum += l[i];
+                break; 
+            }
+        }
     }
+    
+    return sum;
 }
 
-return sum;
-
-let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);\
-alert(result3);
-
-   
+let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+alert(result3);  // This will alert: 47
