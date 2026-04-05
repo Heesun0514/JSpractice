@@ -7,6 +7,51 @@
     <script>
         
 
+ //Create a function and button which allows a user to enter baggage weight and alerts them if the baggage exceeds the allowance of 15kg
+
+ function f1(){
+    let baggagteWeight=parseFloat(document.getElementById('weightInput'.value));
+
+    if(baggagteWeight>15){
+        alert('Your baggage exceeds the allowance of 15kg');
+    }else{
+        alert('Your baggage is within the allowance')
+    };
+ }
+
+
+ /*
+ 
+ Exercise 2:
+
+Create a page with a button
+
+When the user clicks,
+
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000 and alert the user to the correct answer.
+ 
+ */
+
+
+function f2(a, b, n) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+        if (i % a === 0 || i % b === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+   
+}
+
+function showResult2(){
+let result=f2(3,5,1000);
+alert("The sum of all multiples of 3 or 5 below 1000 is :"+ result);}
+
+
+
  // Exercise 3,Create a function to return the sum of all the multiples of a or b below n
 
 function f3(a,b,n)
@@ -24,9 +69,8 @@ let sum=0;
     return sum;
 }
 
-let result=f3(3,5,10);
-alert(result)
-
+// let result=f3(3,5,10);
+// alert(result)
 
 
 
@@ -39,7 +83,7 @@ function handleCalculateF3() {
             
     
             let answer = f3(a, b, n);
-            alert(answer);
+            alert(" the sum of all the multiples of a or b :"+ answer);
         }
 
 
@@ -65,8 +109,8 @@ return sum;
 
 } 
 
-let result1= f4(5,7,[5,6,7,8,9,10]);
-alert(result1)
+// let result1= f4(5,7,[5,6,7,8,9,10]);
+// alert(result1)
 
 function handleCalculateF4() {
             let a = Number(document.getElementById('a_f4').value);
@@ -94,7 +138,7 @@ function handleCalculateF4() {
 
 
             let answer = f4(a, b, arr);
-            alert(answer);
+            alert(" the sum of all the multiples of a or b in array :"+ answer);
         }
 
 
@@ -122,8 +166,8 @@ function f5(a,l)
  return sum;
 }
 
-let results2=f5([2,3],[1,2,3,4,5,6])
-alert(results2)
+// let results2=f5([2,3],[1,2,3,4,5,6])
+// alert(results2)
 
 
 
@@ -148,8 +192,8 @@ function handleCalculateF5() {
         
 
 
-            let answer1 = f5(arrA,arrL);
-            alert(answer1);
+            let answer = f5(arrA,arrL);
+            alert(" the sum of all the multiples of a and l:"+ answer);
         }
 
 
@@ -185,8 +229,8 @@ function f6(a, l) {
     return sum;
 }
 
-let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-alert(result3);  // This will alert: 47
+// let result3 = f6([2, 3, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// alert(result3);  // This will alert: 47
 
 
 
@@ -209,8 +253,8 @@ function handleCalculateF6() {
         
 
 
-            let answer3 = f6(arrA,arrL);
-            alert(answer3);
+            let answer = f6(arrA,arrL);
+            alert(" the sum of all the multiples of a and l :"+ answer);
         }
 
     </script>
@@ -219,6 +263,17 @@ function handleCalculateF6() {
 
 
 <body>
+
+      <h2>Exercise 1 </h2>
+<p><input type="number" id="weightInput" placeholder="Enter weight in kg"></p>
+<p><input type="button" value="check Baggage" onclick="f1()"></p>
+
+
+    
+ <h2>Exercise 2 </h2>
+
+<button onclick="showResult2()">Find Sum of Multiples</button>
+
 
 
   <h2>Exercise 3.1</h2>
