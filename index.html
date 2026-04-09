@@ -16,6 +16,8 @@
         .then(res=>res.json())
         .then(data=>{
             let catUrl=data[0].url;
+            let catImage=document.getElementById('catImage');
+            catImage.src=catUrl
             alert(catUrl);
         });
     }
@@ -288,6 +290,7 @@ function handleCalculateF6() {
     
 <h1> 🐱 Get a random cat picture </h1>
 <button onclick="getCat()">cat</button>
+<img id="catImage"></img>
 
 
 
