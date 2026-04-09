@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise 4.1</title>
+    
+    
+    
+    
+<script>
+    let getCat=()=>{
+        alert("🐾 loading a cat .....");
+
+        fetch("https://api.thecatapi.com/v1/images/search")
+        .then(res=>res.json())
+        .then(data=>{
+            let catUrl=data[0].url;
+            alert(catUrl);
+        });
+    }
+</script> 
+
+    
+    
     <script>
         
 
@@ -263,6 +282,14 @@ function handleCalculateF6() {
 
 
 <body>
+
+
+
+    
+<h1>get a random cat picture</h1>
+<button onclick="getCat">cat</button>
+
+
 
       <h2>Exercise 1 </h2>
 <p><input type="number" id="weightInput" placeholder="Enter weight in kg"></p>
